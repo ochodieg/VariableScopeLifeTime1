@@ -5,20 +5,33 @@ Option Compare Binary
 Module VariableScopeLifetime
 
     Dim y As Integer
+    'dont use globals all the time as that is wasted memory
+    'read book "CLEAN CODE"
 
     Sub Main()
         Dim x As Integer
-        Console.WriteLine(x)
-
+        Console.WriteLine("y = " & CStr(y))
+        Console.WriteLine("y = " & CStr(x))
+        x = 5
+        y = 4I
+        Console.WriteLine("y = " & CStr(y))
+        Console.WriteLine("y = " & CStr(x))
+        TestX()
+        Console.WriteLine("y = " & CStr(y))
+        Console.WriteLine("y = " & CStr(x))
         Console.ReadLine()
 
-        y = 4
     End Sub
 
     Sub TestX()
+        Dim X As Integer
+        X = 42I
+        y = 7I
 
-        X = 5
-        y = 71
+        Console.WriteLine("y = " & CStr(y))
+        Console.WriteLine("y = " & CStr(X))
+
+        ' Console.WriteLine(y)
 
     End Sub
 
